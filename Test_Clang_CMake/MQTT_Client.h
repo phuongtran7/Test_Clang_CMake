@@ -96,11 +96,9 @@ private:
 
 public:
 	// Publisher
-	//MQTT_Client(std::string address, std::string topic, int qos);
 	MQTT_Client(std::string_view address, std::string_view topic, int qos);
 
 	// Subscriber
-	//MQTT_Client(std::string address, std::string topic, int qos, std::shared_ptr<synchronized_value<std::string>> buffer);
 	MQTT_Client(std::string_view address, std::string_view topic, int qos, std::shared_ptr<synchronized_value<std::string>> buffer);
 
 	~MQTT_Client();

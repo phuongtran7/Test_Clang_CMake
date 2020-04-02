@@ -31,7 +31,10 @@
           "value": "C:/Program Files/LLVM/bin/llvm-ranlib.exe",
           "type": "FILEPATH"
         }
-      ]
+      ],
+      "enableMicrosoftCodeAnalysis": true,
+      "enableClangTidyCodeAnalysis": true,
+      "clangTidyChecks": "clang-diagnostic-*,clang-analyzer-*,-*,bugprone*,modernize*,performance*,-modernize-use-auto,-modernize-use-trailing-return-type"
     },
     {
       "name": "x64-Clang-Release",
@@ -64,7 +67,10 @@
           "value": "C:/Program Files/LLVM/bin/llvm-ranlib.exe",
           "type": "FILEPATH"
         }
-      ]
+      ],
+      "enableMicrosoftCodeAnalysis": true,
+      "enableClangTidyCodeAnalysis": true,
+      "clangTidyChecks": "clang-diagnostic-*,clang-analyzer-*,-*,bugprone*,modernize*,performance*,-modernize-use-auto,-modernize-use-trailing-return-type"
     }
   ]
 }

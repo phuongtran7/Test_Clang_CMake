@@ -13,19 +13,6 @@ void MQTT_Client::initialize()
 	}
 }
 
-//MQTT_Client::MQTT_Client(std::string address, std::string topic, int qos) :
-//	address_(std::move(address)),
-//	topic_(std::move(topic)),
-//	qos_(qos),
-//	client_(std::make_shared<mqtt::async_client>(address_, "")), // Force random clientID
-//	conn_options_{},
-//	buffer_(nullptr),
-//	callback_(std::make_shared<action_callback>(*client_, conn_options_, topic_) ),
-//	publish_listener_(std::make_shared<publish_listener>())
-//{
-//	initialize();
-//}
-
 MQTT_Client::MQTT_Client(std::string_view address, std::string_view topic, int qos):
 	address_(address),
 	topic_(topic),
@@ -38,19 +25,6 @@ MQTT_Client::MQTT_Client(std::string_view address, std::string_view topic, int q
 {
 	initialize();
 }
-
-//MQTT_Client::MQTT_Client(std::string address, std::string topic, int qos, std::shared_ptr<synchronized_value<std::string>> buffer) :
-//	address_(std::move(address)),
-//	topic_(std::move(topic)),
-//	qos_(qos),
-//	client_(std::make_shared<mqtt::async_client>(address_, "")), // Force random clientID
-//	conn_options_{},
-//	buffer_(std::move(buffer)),
-//	callback_(std::make_shared<action_callback>(*client_, conn_options_, topic_, buffer_)),
-//	publish_listener_(nullptr)
-//{
-//	initialize();
-//}
 
 MQTT_Client::MQTT_Client(std::string_view address, std::string_view topic, int qos, std::shared_ptr<synchronized_value<std::string>> buffer) :
 	address_(address),

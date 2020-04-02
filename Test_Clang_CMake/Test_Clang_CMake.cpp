@@ -16,16 +16,9 @@ void read(std::string_view received_data) {
 
 int main()
 {
-	//MQTT_Client c1("tcp://127.0.0.1:1883", "Test_String_view", 0);
-	//auto c2 = std::move(c1);
-
-	//auto test_buf = std::make_shared<synchronized_value<std::string>>();
-	//MQTT_Client r1("tcp://127.0.0.1:1883", "Test_String_view_Sub", 0, test_buf);
-	//auto r2(std::move(r1));
-
 	init("tcp://127.0.0.1:1883", "XP-S76-Debug");
 
-	while (1) {
+	while (true) {
 		auto received_data = apply([](std::string& s) { return std::move(s); }, *buffer_);
 
 		if (!received_data.empty()) {
